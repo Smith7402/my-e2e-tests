@@ -1,5 +1,5 @@
-// import { expect } from "@wdio/globals";
-// import "@wdio/globals/types/expect-matchers";
+import { expect } from "@wdio/globals";
+import "@wdio/globals/types/expect-matchers";
 import LoginPage from "../pageobjects/login.page";
 
 describe("TC01 - Login Page Render", () => {
@@ -12,15 +12,15 @@ describe("TC01 - Login Page Render", () => {
   });
 });
 
-// describe("TC04 - Successful Login", () => {
-//   it("should login and redirect to dashboard", async () => {
-//     const loginPage = new LoginPage();
+describe("TC04 - Successful Login", () => {
+  it("should login and redirect to dashboard", async () => {
+    const loginPage = new LoginPage();
 
-//     await loginPage.open(); // => /login
-//     await loginPage.login("Admin", "admin123");
+    await loginPage.open(); // => /login
+    await loginPage.login("Admin", "admin123");
 
-//     await expect(browser).toHaveUrl(
-//       expect.stringContaining("/web/index.php/dashboard/index")
-//     );
-//   });
-// });
+    await expect(browser).toHaveUrl(
+      expect.stringContaining("/web/index.php/dashboard/index")
+    );
+  });
+});
