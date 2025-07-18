@@ -144,6 +144,10 @@ export const config: WebdriverIO.Config = {
     timeout: 60000,
   },
 
+  beforeTest: async () => {
+    await browser.reloadSession(); // ✅ reset browser giữa mỗi test
+  },
+
   //
   // =====
   // Hooks
