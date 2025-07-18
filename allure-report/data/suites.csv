@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5671","should login and redirect to dashboard","","Fri Jul 18 16:31:33 ICT 2025","passed","Fri Jul 18 16:31:38 ICT 2025","","TC04 - Successful Login","",""
+"","7435","should logout and redirect to login page","","Fri Jul 18 16:31:38 ICT 2025","passed","Fri Jul 18 16:31:46 ICT 2025","","TC05 - Logout functionality","",""
+"","5825","should show error message for invalid credentials","","Fri Jul 18 16:31:27 ICT 2025","passed","Fri Jul 18 16:31:33 ICT 2025","","TC03 - Login with invalid credentials","",""
+"","8244","should display username, password fields and login button","","Fri Jul 18 16:31:15 ICT 2025","passed","Fri Jul 18 16:31:23 ICT 2025","","TC01 - Login Page Render","",""
+"","3848","should show required validation messages","","Fri Jul 18 16:31:23 ICT 2025","passed","Fri Jul 18 16:31:27 ICT 2025","","TC02 - Login with missing fields","",""

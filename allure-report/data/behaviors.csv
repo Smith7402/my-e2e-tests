@@ -1,0 +1,6 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"0","","0","TC04 - Successful Login","1","0","","0"
+"0","","0","TC05 - Logout functionality","1","0","","0"
+"0","","0","TC03 - Login with invalid credentials","1","0","","0"
+"0","","0","TC01 - Login Page Render","1","0","","0"
+"0","","0","TC02 - Login with missing fields","1","0","","0"
