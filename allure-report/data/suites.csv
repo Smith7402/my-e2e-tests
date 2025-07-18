@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","836","Kiểm tra tiêu đề trang","","Wed Jul 16 11:49:56 ICT 2025","passed","Wed Jul 16 11:49:57 ICT 2025","","Trang Google: ","",""
-"","12802","should display username, password fields and login button","","Wed Jul 16 23:49:04 ICT 2025","failed","Wed Jul 16 23:49:16 ICT 2025","","TC01 - Login Page Render","",""
-"","11218","should show error on invalid login","","Wed Jul 16 15:50:25 ICT 2025","failed","Wed Jul 16 15:50:37 ICT 2025","","Login page tests","",""
-"","1908","should open google.com","","Wed Jul 16 11:49:54 ICT 2025","passed","Wed Jul 16 11:49:56 ICT 2025","","Google Search","",""
