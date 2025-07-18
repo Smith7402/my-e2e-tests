@@ -85,7 +85,7 @@ describe("TC06 - Verify displayed username after login", () => {
 
     await $('img[alt="profile picture"]').click();
     const name = await $("p.oxd-userdropdown-name");
-    await expect(name).toHaveText("Tosca Academy");
+    await expect(name).toHaveText("manda user");
   });
 });
 
