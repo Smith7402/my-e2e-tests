@@ -155,3 +155,26 @@ describe("TC08 - Add new employee in PIM", () => {
     );
   });
 });
+
+describe("TC09 - Add employee validation check", () => {
+  it("should show validation when required fields are missing", async () => {
+    const loginPage = new LoginPage();
+
+    // Login
+    await loginPage.open();
+    await loginPage.login("Admin", "admin123");
+
+    // Go to PIM and Add Employee
+    const ButtonAdd = await $(
+      'button.oxd-button.oxd-button--medium.oxd-button--secondary[type="button"]'
+    );
+
+    await $('a[href="/web/index.php/pim/viewPimModule"]').click();
+    ButtonAdd.click();
+
+    await $('button[type="submit"]').click();
+
+    const firstNameError = await $("span.oxd-input-field-error-message");
+    await expect(firstNameError).toBeDisplayed();
+  });
+});
