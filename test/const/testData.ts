@@ -10,9 +10,9 @@ export const wrongCredentials = {
 
 export const employeeData = {
   userName: "manda user",
-  firstName: "Dat",
-  lastName: "Nguyen",
-  searchName: "Dat",
+  firstName: "Datt74",
+  lastName: "Nguyenn",
+  searchName: "Datt74",
 };
 
 export const validationMessages = {
