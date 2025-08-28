@@ -43,15 +43,34 @@ export const config: WebdriverIO.Config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 1, // This is the maximum number of instances that can run at the same time.
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
+  user: process.env.SAUCE_USERNAME, // hoặc điền thẳng USERNAME
+  key: process.env.SAUCE_ACCESS_KEY, // hoặc điền thẳng ACCESS_KEY
+  region: "us", // hoặc 'eu' nếu tài khoản của bạn ở EU datacenter
+
+  services: [
+    [
+      "sauce",
+      {
+        sauceConnect: false, // true nếu bạn test ứng dụng nội bộ
+      },
+    ],
+  ],
+
   capabilities: [
     {
       browserName: "chrome",
+      browserVersion: "latest",
+      platformName: "Windows 11",
+      "sauce:options": {
+        build: "WebdriverIO-Sauce-Demo",
+        name: "Demo Test",
+      },
     },
   ],
 
@@ -132,7 +151,7 @@ export const config: WebdriverIO.Config = {
       {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: false,
+        disableWebdriverScreenshotsReporting: false, // vẫn screenshot khi test fail nhưng ko attach vào report
       },
     ],
   ],
@@ -145,7 +164,7 @@ export const config: WebdriverIO.Config = {
   },
 
   beforeTest: async () => {
-    await browser.reloadSession(); // ✅ reset browser giữa mỗi test
+    await browser.reloadSession(); // ✅ reset browser giữa mỗi testcase
   },
 
   //
