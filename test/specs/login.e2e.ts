@@ -9,7 +9,7 @@ describe("Login Test Cases", () => {
     await testLoginPageRender();
   });
 
-  it.only("TC02 - Login with missing fields", async () => {
+  it("TC02 - Login with missing fields", async () => {
     await testLoginWithMissingFields();
   });
 
