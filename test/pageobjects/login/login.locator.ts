@@ -14,7 +14,7 @@ export default class LoginPage extends BasePage {
   }
 
   public get usernameValidation() {
-    return $('//span[text()="Required"]');
+    return $("span.oxd-text--span.oxd-input-field-error-message");
   }
 
   public get errorInvalidValues() {
