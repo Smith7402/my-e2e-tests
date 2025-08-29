@@ -11,7 +11,7 @@ export const wrongCredentials = {
 export const employeeData = {
   userName: "manda user",
   firstName: "Dat",
-  lastName: "Nguyenn",
+  lastName: "Nguyen",
   searchName: "Dat",
 };
 
