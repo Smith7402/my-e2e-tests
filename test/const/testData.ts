@@ -13,6 +13,8 @@ export const employeeData = {
   firstName: "Dat",
   lastName: "Nguyen",
   searchName: "Dat",
+  middleName: "S.",
+  employeeId: "0704",
 };
 
 export const validationMessages = {
