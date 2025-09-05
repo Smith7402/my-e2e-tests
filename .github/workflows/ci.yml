@@ -24,6 +24,7 @@ jobs:
 
       - name: Run WebdriverIO tests on Sauce Labs
         env:
+          USE_SAUCE: true
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: npx wdio run wdio.conf.ts
