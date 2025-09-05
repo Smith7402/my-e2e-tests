@@ -1,3 +1,5 @@
+const useSauce = process.env.USE_SAUCE === "true";
+
 export const config: WebdriverIO.Config = {
   //
   // ====================
@@ -49,30 +51,42 @@ export const config: WebdriverIO.Config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  user: process.env.SAUCE_USERNAME, // hoặc điền thẳng USERNAME
-  key: process.env.SAUCE_ACCESS_KEY, // hoặc điền thẳng ACCESS_KEY
-  region: "us", // hoặc 'eu' nếu tài khoản của bạn ở EU datacenter
+  ...(useSauce
+    ? {
+        user: process.env.SAUCE_USERNAME,
+        key: process.env.SAUCE_ACCESS_KEY,
+        region: "eu", // hoặc us
 
-  services: [
-    [
-      "sauce",
-      {
-        sauceConnect: false, // true nếu bạn test ứng dụng nội bộ
-      },
-    ],
-  ],
+        services: [
+          [
+            "sauce",
+            {
+              sauceConnect: false,
+            },
+          ],
+        ],
 
-  capabilities: [
-    {
-      browserName: "chrome",
-      browserVersion: "latest",
-      platformName: "Windows 11",
-      "sauce:options": {
-        build: "WebdriverIO-Sauce-Demo",
-        name: "Demo Test",
-      },
-    },
-  ],
+        capabilities: [
+          {
+            browserName: "chrome",
+            browserVersion: "latest",
+            platformName: "Windows 11",
+            "sauce:options": {
+              build: "WebdriverIO-Sauce-Demo",
+              name: "Demo Test",
+            },
+          },
+        ],
+      }
+    : {
+        // Nếu chạy local
+        // services: ["chromedriver"], // chạy local chrome
+        capabilities: [
+          {
+            browserName: "chrome",
+          },
+        ],
+      }),
 
   //
   // ===================
