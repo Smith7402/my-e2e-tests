@@ -5,6 +5,12 @@ on:
     branches: ["main", "test1"] # chạy khi merge/push vào các nhánh này
   pull_request:
     branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "Đường dẫn file test cần chạy (vd: ./test/specs/login.e2e.ts). Để trống thì chạy toàn bộ."
+        required: false
+        default: ""
 
 jobs:
   test:
@@ -27,4 +33,11 @@ jobs:
           USE_SAUCE: true
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
-        run: npx wdio run wdio.conf.ts
+        run: |
+          if [ "${{ github.event.inputs.spec }}" != "" ]; then
+            echo "🔹 Chạy test file: ${{ github.event.inputs.spec }}"
+            npx wdio run wdio.conf.ts --spec ${{ github.event.inputs.spec }}
+          else
+            echo "🔹 Chạy toàn bộ test"
+            npx wdio run wdio.conf.ts
+          fi
